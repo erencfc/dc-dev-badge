@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Badge Getter</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Khand">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="icon.svg">
+
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="steps-container active" id="step1">
+            <h1>Hello! This website will help you to get your <span>Active Developer Badge!</span></h1>
+            <h1>To get your badge, you have to create an <span>Application</span> first!</h1>
+
+            <ul class="steps">
+                <li>Go to <a href="https://discord.com/developers/applications" target="_blank">Discord Developer
+                        Portal</a></li>
+                <li>Create a <span>New Application</li>
+                <li>Go to the <span>Bot</span> tab</li>
+                <li>Click on <span>Add Bot</span> and then on <span>Yes, do
+                        it!</span></li>
+                <li>Scroll down a little bit, and enable all the <span>Privileged Gateway
+                        Intents</span> then save it.</li>
+            </ul>
+            <br>
+
+            <h1>Once you have finished, click on the button below!</h1>
+            <div class="btn-holder">
+                <button class="btn" onclick="showStep('step2')">Done!</button>
+            </div>
+        </div>
+
+        <div class="steps-container" id="step2">
+            <h1>Now you have to add the bot to your discord server!</h1>
+            <ul class="steps">
+                <li>Create a new discord server</li>
+                <li>Invite your friend to the server (or invite your other acc)</li>
+                <li>Go to <a href="https://discord.com/developers/applications" target="_blank">Discord Developer
+                        Portal</a> again and
+                    click on your application</li>
+                <li>In <span>General Information</span> tab click on <span>Copy</span> under your <span>Application
+                        ID</span></li>
+                <li>Put your <span>Application ID</span> in the input below and click on <span>Submit</span></li>
+                <li>In the tab that opened, add your <span>bot</span> to your server that you just created.</li>
+            </ul>
+            <br>
+            <input type="text" id="applicationId" placeholder="Application ID">
+            <button onclick="botInvite()">Open</button>
+            <br>
+            <h1>Once you have finished, click on the button below!</h1>
+            <div class="btn-holder">
+                <button class="btn" onclick="showStep('step3')">Done!</button>
+            </div>
+        </div>
+
+        <div class="steps-container" id="step3">
+            <h1>Now you have to paste your bot's token in the input below!</h1>
+            <ul class="steps">
+                <li>Go to <a href="https://discord.com/developers/applications" target="_blank">Discord Developer
+                        Portal</a> again and
+                    click on your application then click on <span>Bot</span> tab</li>
+                <li>Click on <span>Copy</span> from the <span>Token</span> section to copy your bot's token (if you
+                    can't
+                    copy, <span>Reset Token</span>)</li>
+                <li>Paste your bot's token in the input below and click on <span>Start</span></li>
+            </ul>
+            <br>
+            <input type="text" id="token" placeholder="Your bot's token">
+            <button onclick="startBot(false, true)" id="start">Start</button>
+        </div>
+
+        <div class="steps-container" id="step4">
+            <h1><span>Bot is started successfully!</span></h1>
+            <ul class="steps">
+                <li>Now go to your server and use the <span>/badge</span> command with your friend/another account in
+                    your server to get your
+                    <span>Active Developer Badge!</span>
+                </li>
+                <li style="color: red">Your bot has been started and you have 5 minutes to use the bot! After that bot
+                    will be stopped automatically!</li>
+                <li style="color: aquamarine">You can start the bot again or stop it by clicking on the buttons below!
+                </li>
+            </ul>
+            <br>
+
+            <div class="btn-holder">
+                <button class="btn start-btn" onclick="startBot(true)" id="restart">Restart Bot</button>
+                <button class="btn stop-btn" onclick="stopBot()" id="stop">Stop Bot</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
