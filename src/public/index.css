@@ -83,3 +83,14 @@ a {
     padding: 0;
     overflow: hidden;
 }
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    color: #dfdfdf;
+    font-size: 1em;
+    padding: 10px 0;
+    background-color: #000000;
+}
