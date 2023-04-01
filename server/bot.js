@@ -11,8 +11,12 @@ const addBot = (token, client, timeout) => {
 };
 
 const removeBot = (token) => {
-    clearTimeout(activeBots[token].timeout);
-    activeBots[token].client.destroy();
+    if (activeBots[token]?.timeout) {
+        clearTimeout(activeBots[token].timeout);
+    }
+    if (activeBots[token]?.client) {
+        activeBots[token].client.destroy();
+    }
     delete activeBots[token];
     console.log("Bot logout successful");
 };
