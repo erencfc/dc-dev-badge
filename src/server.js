@@ -12,7 +12,7 @@ app.use(express.static("public"));
 
 app.use("/api", login, logout);
 
-const PORT = process.env.PORT || 8080;
+const PORT = 10000;
 app.listen(PORT, () => {
     console.log("Server running on port " + PORT);
 });
